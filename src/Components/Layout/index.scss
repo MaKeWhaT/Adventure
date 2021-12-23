@@ -1,0 +1,54 @@
+.route-active {
+  color: var(--color-active);
+  font-weight: bold;
+}
+
+.Page-Wrap {
+  background-color: var(--color-page-background);
+  height: 100vh;
+  overflow: scroll;
+  .Page-Wrap__Header{
+    height: 50px;
+    border-bottom: 1px solid var(--color-border);
+    .Page-Wrap__Header__Text{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      padding: 0 20px;
+      width: 250px;
+      font-size: 34px;
+      color: var(--color-header);
+      -webkit-text-stroke: 2px var(--color-border);
+      font-weight: bold;
+    }
+  }
+  .Page-Wrap__Content{
+    display: flex;
+    .Page-Wrap__Content__Nav{
+      padding: 20px;
+      height: calc(100vh - 50px);
+      width: 250px;
+      border-right: 1px solid var(--color-border);
+      .Page-Wrap__Content__List {
+        .Page-Wrap__Content__List__Item{
+          margin-bottom: 10px;
+          &:hover {
+            text-decoration: underline;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .Page-Wrap__Content__Main{
+      display: flex;
+      flex: 1 0 auto;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 50px);
+    }
+  }
+
+}
