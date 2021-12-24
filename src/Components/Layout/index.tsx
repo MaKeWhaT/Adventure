@@ -27,7 +27,9 @@ export default function Layout({ children }: IProps) {
           </ul>
         </nav>
         <main className="Page-Wrap__Content__Main">
-          {children}
+          <div className="Page-Wrap__Content__Main__Plate">
+            {children}
+          </div>
         </main>
       </div>
 
