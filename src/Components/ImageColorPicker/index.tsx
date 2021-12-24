@@ -74,6 +74,7 @@ export default function ImageColorPicker () {
             context2D.clearRect(0, 0, 498, 498)
             context2D.beginPath()
         }
+        setUniqueColors([])
     }
 
 
