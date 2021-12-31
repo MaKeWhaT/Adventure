@@ -1,8 +1,15 @@
+/* eslint-disable no-undef */
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Layout from '@/Components/Layout';
 
-export const routes = [
+interface RouteConfig {
+  name: string,
+  path: string,
+  component: ReturnType<typeof lazy>
+}
+
+export const routes: RouteConfig[] = [
   {
     name: 'Home',
     path: '/',
@@ -16,8 +23,13 @@ export const routes = [
   {
     name: 'ImageColorPicker',
     path: '/ImageColorPicker',
-    component: lazy(() => import(/* webpackChunkName: "ImageColorPicker" */ 'pages/ImageColorPicker'))
-  }
+    component: lazy(() => import(/* webpackChunkName: "ImageColorPicker" */ 'pages/ImageColorPicker')),
+  },
+  {
+    name: 'PlayGround',
+    path: '/PlayGround',
+    component: lazy(() => import(/* webpackChunkName: "PlayGround" */ 'pages/PlayGround')),
+  },
 ];
 
 export default function Router() {
