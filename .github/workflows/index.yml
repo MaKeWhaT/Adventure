@@ -39,3 +39,5 @@ jobs:
 
       - run: npm run lint
       - run: npm run tsc
+      - run: npm run build
+      - run: ls -al ./dist
