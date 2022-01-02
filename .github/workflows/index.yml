@@ -34,7 +34,7 @@ jobs:
 
       # 캐시가 존재하지 않은 경우 레지스트리를 통해 직접 설치합니다.
       - name: Install Node Modules If Cache Miss.
-        if: steps.cache-primes.outputs.cache-hit != 'true'
+        if: steps.NODE_MODULES_CACHE.outputs.cache-hit != 'true'
         run: npm ci
 
       - run: npm run lint
