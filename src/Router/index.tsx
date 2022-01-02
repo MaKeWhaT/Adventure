@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter, Switch, Route, Redirect,
+} from 'react-router-dom';
 import Layout from '@/Components/Layout';
 
 interface RouteConfig {
@@ -10,11 +12,6 @@ interface RouteConfig {
 }
 
 export const routes: RouteConfig[] = [
-  {
-    name: 'Home',
-    path: '/',
-    component: lazy(() => import(/* webpackChunkName: "Home" */ 'pages/Home')),
-  },
   {
     name: 'Button',
     path: '/Button',
@@ -30,6 +27,11 @@ export const routes: RouteConfig[] = [
     path: '/PlayGround',
     component: lazy(() => import(/* webpackChunkName: "PlayGround" */ 'pages/PlayGround')),
   },
+  {
+    name: 'NotFound',
+    path: '/NotFound',
+    component: lazy(() => import(/* webpackChunkName: "NotFound" */ 'pages/NotFound')),
+  },
 ];
 
 export default function Router() {
@@ -38,7 +40,9 @@ export default function Router() {
       <Switch>
         <Layout>
           <Suspense fallback={<div>Loading...</div>}>
-            {routes.map((route) => <Route exact key={route.name} {...route} />)}
+            <Route exact path="/" component={lazy(() => import(/* webpackChunkName: "Home" */ 'pages/Home'))} />
+            {routes.map((route) => <Route key={route.name} {...route} />)}
+            <Redirect to="/NotFound" />
           </Suspense>
         </Layout>
       </Switch>

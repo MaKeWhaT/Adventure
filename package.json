@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc && webpack-dev-server --config webpack.dev.js --hot",
-    "build": "tsc && webpack --config webpack.prod.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint -c .eslintrc.js .",
+    "tsc": "tsc",
+    "dev": "webpack-dev-server --config webpack.dev.js --hot",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -47,7 +48,6 @@
     "style-loader": "^3.3.1",
     "stylelint": "^14.2.0",
     "stylelint-config-standard": "^24.0.0",
-    "tsc": "^2.0.3",
     "typescript": "^4.5.4",
     "webpack": "^5.65.0",
     "webpack-bundle-analyzer": "^4.5.0",
@@ -60,6 +60,7 @@
     "immer": "^9.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^5.3.0"
+    "react-router-dom": "^5.3.0",
+    "recoil": "^0.5.2"
   }
 }
