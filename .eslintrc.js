@@ -4,9 +4,9 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'plugin:react-hooks/recommended',
-    'plugin:react/recommended',
     'airbnb',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -36,5 +36,12 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'import/no-unresolved': 0,
     'import/extensions': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': [
+      'warn',
+      {
+        additionalHooks: 'useRecoilCallback',
+      },
+    ],
   },
 };
