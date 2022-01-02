@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -44,4 +45,16 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: [
+        'src/**/*.ts',
+        'src/**/*.tsx',
+        'pages/**/*.ts',
+        'pages/**/*/tsx',
+      ],
+      excludedFiles: ['*.test.ts', '*.test.tsx'],
+    },
+  ],
+  ignorePatterns: ['node_modules/**', 'dist/**'],
 };
