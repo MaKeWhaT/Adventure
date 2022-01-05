@@ -40,7 +40,7 @@ export default function Router() {
       <Switch>
         <Layout>
           <Suspense fallback={<div>Loading...</div>}>
-            <Route exact path="/" component={lazy(() => import(/* webpackChunkName: "Home" */ 'pages/Home'))} />
+            <Route path="/" element={lazy(() => import(/* webpackChunkName: "Home" */ 'pages/Home'))} />
             {routes.map((route) => <Route key={route.name} {...route} />)}
             <Redirect to="/NotFound" />
           </Suspense>
