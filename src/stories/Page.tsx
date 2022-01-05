@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
-import { Header } from './Header';
+import Header from './Header';
 import './page.css';
 
 interface PageProps {
@@ -10,7 +11,9 @@ interface PageProps {
   onCreateAccount: () => void;
 }
 
-export const Page = ({ user, onLogin, onLogout, onCreateAccount }: PageProps) => (
+const Page = ({
+  user, onLogin, onLogout, onCreateAccount,
+}: PageProps) => (
   <article>
     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />
 
@@ -65,3 +68,9 @@ export const Page = ({ user, onLogin, onLogout, onCreateAccount }: PageProps) =>
     </section>
   </article>
 );
+
+Page.defaultProps = {
+  user: { name: 'hi' },
+};
+
+export default Page;

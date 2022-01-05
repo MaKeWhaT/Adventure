@@ -27,11 +27,11 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
+const Button = ({
   primary = false,
   size = 'medium',
   backgroundColor,
-  label,
+  label = '',
   ...props
 }: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
@@ -46,3 +46,12 @@ export const Button = ({
     </button>
   );
 };
+
+Button.defaultProps = {
+  primary: false,
+  size: 'medium',
+  backgroundColor: 'skyblue',
+  onClick: () => { console.log('hi'); },
+};
+
+export default Button;
