@@ -4,7 +4,7 @@ import { routes } from '@/Router';
 import './index.scss';
 
 export interface IProps {
-    children: ReactNode
+    children?: ReactNode
 }
 export default function Layout({ children }: IProps) {
   return (
@@ -20,7 +20,9 @@ export default function Layout({ children }: IProps) {
             {
             routes.map(({ name, path }) => (
               <li className="Page-Wrap__Content__List__Item" key={name}>
-                <NavLink exact activeClassName="route-active" to={path}>{name}</NavLink>
+                <NavLink to={path} className={({ isActive }) => (isActive ? 'route-active' : '')}>
+                  {name}
+                </NavLink>
               </li>
             ))
           }
