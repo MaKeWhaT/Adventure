@@ -182,7 +182,10 @@ module.exports = {
   // A map from regular expressions to paths to transformers
   transform: {
     // '^.+\\.(t|j)sx?$': '@swc/jest',
-    '^.+\\.(t|j)sx?$': ['babel-jest', { configFile: './babel-jest.config.json' }],
+    '^.+\\.(t|j)sx?$': [
+      'babel-jest',
+      { configFile: './babel-jest.config.json' },
+    ],
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation

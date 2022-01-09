@@ -1,26 +1,27 @@
 * {
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    font-family: 'Roboto Mono';
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: "Roboto Mono", sans-serif;
+  box-sizing: border-box;
 }
 
 :root {
-    --color-border: #272c34;
-    --color-header: #ff5252;
-    --color-active: #2979ff;
-    --color-page-background: #f5f5f5;
+  --color-border: #272c34;
+  --color-header: #ff5252;
+  --color-active: #2979ff;
+  --color-page-background: #f5f5f5;
 }
 
-a{
-    color: #424242;
-    text-decoration: none;
-    &:visited {
-        color: none;
-    }
+a {
+  color: #424242;
+  text-decoration: none;
+
+  &:visited {
+    color: none;
+  }
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }

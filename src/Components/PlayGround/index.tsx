@@ -17,18 +17,21 @@ export default function PlayGround() {
   const todos = useRecoilValue(todoListState);
   const [, setTodos] = useRecoilState<ITodoItem[]>(todoListState);
   const onAddTodo = () => {
-    setTodos((currentTodos) => [...currentTodos, { id: nextId, name: '새로운 투두' }]);
+    setTodos((currentTodos) => [
+      ...currentTodos,
+      { id: nextId, name: '새로운 투두' },
+    ]);
     setNextId(nextId + 1);
   };
   return (
     <div>
-      <button type="button" onClick={onAddTodo}>Add Todo</button>
+      <button type="button" onClick={onAddTodo}>
+        Add Todo
+      </button>
       <ul>
-        {
-        todos.map(({ id, name }) => (
+        {todos.map(({ id, name }) => (
           <li key={id}>{name}</li>
-        ))
-      }
+        ))}
       </ul>
     </div>
   );

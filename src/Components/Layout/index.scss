@@ -7,10 +7,12 @@
   background-color: var(--color-page-background);
   height: 100vh;
   overflow: scroll;
-  .Page-Wrap__Header{
+
+  .Page-Wrap__Header {
     height: 50px;
     border-bottom: 1px solid var(--color-border);
-    .Page-Wrap__Header__Text{
+
+    .Page-Wrap__Header__Text {
       display: flex;
       align-items: center;
       height: 100%;
@@ -23,32 +25,39 @@
       font-weight: bold;
     }
   }
-  .Page-Wrap__Content{
+
+  .Page-Wrap__Content {
     display: flex;
-    .Page-Wrap__Content__Nav{
+
+    .Page-Wrap__Content__Nav {
       padding: 20px;
       height: calc(100vh - 50px);
       width: 250px;
       border-right: 1px solid var(--color-border);
+
       .Page-Wrap__Content__List {
-        .Page-Wrap__Content__List__Item{
+        .Page-Wrap__Content__List__Item {
           margin-bottom: 10px;
+
           &:hover {
             text-decoration: underline;
           }
+
           &:last-child {
             margin-bottom: 0;
           }
         }
       }
     }
-    .Page-Wrap__Content__Main{
+
+    .Page-Wrap__Content__Main {
       display: flex;
       flex: 1 0 auto;
       align-items: center;
       justify-content: center;
       height: calc(100vh - 50px);
-      .Page-Wrap__Content__Main__Plate{
+
+      .Page-Wrap__Content__Main__Plate {
         padding: 40px;
         background-color: white;
         border-radius: 4px;

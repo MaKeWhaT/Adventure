@@ -17,10 +17,11 @@ export default function ImageColorPicker() {
 
   const onLoadImageToCanvas = (event: React.ChangeEvent<HTMLInputElement>) => {
     const eventTarget = event.target;
-    const hasFile = eventTarget
-                        && eventTarget instanceof HTMLInputElement
-                        && eventTarget.files
-                        && eventTarget.files[0];
+    const hasFile =
+      eventTarget &&
+      eventTarget instanceof HTMLInputElement &&
+      eventTarget.files &&
+      eventTarget.files[0];
     if (hasFile) {
       const imageSource = new Image();
       imageSource.addEventListener('load', () => {
@@ -33,7 +34,9 @@ export default function ImageColorPicker() {
           let cursor = 0;
           const chunkSize = imageData.byteLength / 4;
           for (let i = 1; i <= 4; i++) {
-            const nextWorker = new Worker(new URL('./worker.ts', import.meta.url));
+            const nextWorker = new Worker(
+              new URL('./worker.ts', import.meta.url),
+            );
             nextWorker.onmessage = function ({ data }) {
               assembleUniqueColors(data);
             };
@@ -48,7 +51,10 @@ export default function ImageColorPicker() {
           console.log(cursor);
         }
       });
-      imageSource.setAttribute('src', URL.createObjectURL(eventTarget.files![0]));
+      imageSource.setAttribute(
+        'src',
+        URL.createObjectURL(eventTarget.files![0]),
+      );
     }
   };
 
@@ -64,7 +70,9 @@ export default function ImageColorPicker() {
     }
   };
 
-  const onResetImageAndCanvas = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const onResetImageAndCanvas = (
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
     if (inputRef.current) {
       inputRef.current.value = '';
     }
@@ -83,15 +91,37 @@ export default function ImageColorPicker() {
           <canvas width={498} height={498} ref={canvasRef} />
         </div>
         <div className="Image-Color-Picker__Wrap__Box-Top__Box-Right">
-          <button type="button" className="Canvas-Button Button--Load" onClick={onBrowseImage}>Browse</button>
-          <button type="button" className="Canvas-Button Button--Reset" onClick={onResetImageAndCanvas}>Reset</button>
-          <input accept="image/*" type="file" hidden ref={inputRef} onChange={onLoadImageToCanvas} />
+          <button
+            type="button"
+            className="Canvas-Button Button--Load"
+            onClick={onBrowseImage}
+          >
+            Browse
+          </button>
+          <button
+            type="button"
+            className="Canvas-Button Button--Reset"
+            onClick={onResetImageAndCanvas}
+          >
+            Reset
+          </button>
+          <input
+            accept="image/*"
+            type="file"
+            hidden
+            ref={inputRef}
+            onChange={onLoadImageToCanvas}
+          />
         </div>
       </section>
       <section className="Image-Color-Picker__Wrap__Box-Bottom">
-        {
-                    uniqueColors.map((color) => (<div className="block" key={color} style={{ backgroundColor: color }} />))
-                }
+        {uniqueColors.map((color) => (
+          <div
+            className="block"
+            key={color}
+            style={{ backgroundColor: color }}
+          />
+        ))}
       </section>
     </article>
   );

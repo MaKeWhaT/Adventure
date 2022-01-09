@@ -6,14 +6,13 @@ on:
       - master
   pull_request:
     branches:
-      - '**'
+      - "**"
 
 jobs:
-  test: 
+  test:
     runs-on: ubuntu-latest
 
     steps:
-
       # 현재 브랜치의 소스코드를 가져옵니다.
       - name: Checkout Source Code.
         uses: actions/checkout@v2
@@ -21,8 +20,8 @@ jobs:
       # .nvmrc 파일을 읽어 노드 구동 버전을 가져옵니다.
       - name: Use Node.js.
         uses: actions/setup-node@v2
-        with: 
-          node-version-file: '.nvmrc'
+        with:
+          node-version-file: ".nvmrc"
 
       # node_modules 를 캐시합니다.
       - name: Cache Node Modules.
@@ -37,8 +36,6 @@ jobs:
         if: steps.NODE_MODULES_CACHE.outputs.cache-hit != 'true'
         run: npm ci
 
-      - run: npm run lint
-      - run: npm run tsc
-      - run: npm run test
+      - run: npm run validate
       - run: npm run build
       - run: ls -al ./dist
