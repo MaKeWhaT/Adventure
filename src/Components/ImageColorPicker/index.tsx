@@ -1,11 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './index.scss';
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+  BaseSyntheticEvent,
+  UIEventHandler,
+} from "react";
+import "./index.scss";
 
 export default function ImageColorPicker() {
-  console.log('Rendering ImageColorPicker');
-  let messageCount = 0;
-  const localColorSet: Set<string> = new Set();
-  const [uniqueColors, setUniqueColors] = useState<string[]>([]);
+  console.log("Rendering ImageColorPicker");
+  const maxWorkers = 4;
+  const [workers, setWorkers] = useState<Worker[]>([]);
+  const [uniqueColors, setUniqueColors] = useState<Set<string>>(new Set());
+  const [sliceCursor, setSliceCursor] = useState(600);
+  const [uniqueSlicedColors, setUniqueSlicedColors] = useState<string[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -24,66 +33,87 @@ export default function ImageColorPicker() {
       eventTarget.files[0];
     if (hasFile) {
       const imageSource = new Image();
-      imageSource.addEventListener('load', () => {
-        const context2D = canvasRef.current?.getContext('2d');
+      imageSource.addEventListener("load", () => {
+        const context2D = canvasRef.current?.getContext("2d");
         if (imageSource && context2D) {
           context2D.drawImage(imageSource, 0, 0, 498, 498);
           const { data: imageData } = context2D.getImageData(0, 0, 498, 498);
-          const workers: Worker[] = [];
 
           let cursor = 0;
-          const chunkSize = imageData.byteLength / 4;
-          for (let i = 1; i <= 4; i++) {
-            const nextWorker = new Worker(
-              new URL('./worker.ts', import.meta.url),
-            );
-            nextWorker.onmessage = function ({ data }) {
-              assembleUniqueColors(data);
-            };
-            nextWorker.postMessage({
+          const chunkSize = imageData.byteLength / maxWorkers;
+          for (let i = 0; i < maxWorkers; i++) {
+            workers[i].postMessage({
               dataRef: imageData,
               cursorStart: cursor,
               cursorEnd: cursor + chunkSize - 1,
             });
             cursor += chunkSize;
-            workers.push(nextWorker);
           }
-          console.log(cursor);
         }
       });
       imageSource.setAttribute(
-        'src',
+        "src",
         URL.createObjectURL(eventTarget.files![0]),
       );
     }
   };
 
-  const assembleUniqueColors = (set: Set<string>) => {
-    console.log('Assembling ...');
-    for (const rgba of set) {
-      localColorSet.add(rgba);
-    }
-    messageCount += 1;
-    console.log(messageCount);
-    if (messageCount === 4) {
-      setUniqueColors([...localColorSet]);
-    }
-  };
+  const assembleUniqueColors = useCallback(
+    (set: Set<string>) => {
+      setUniqueColors(new Set([...uniqueColors, ...set]));
+    },
+    [uniqueColors],
+  );
 
   const onResetImageAndCanvas = (
     event: React.MouseEvent<HTMLButtonElement>,
   ) => {
     if (inputRef.current) {
-      inputRef.current.value = '';
+      inputRef.current.value = "";
     }
-    const context2D = canvasRef.current?.getContext('2d');
+    const context2D = canvasRef.current?.getContext("2d");
     if (context2D) {
       context2D.clearRect(0, 0, 498, 498);
       context2D.beginPath();
     }
-    setUniqueColors([]);
+    setUniqueColors(new Set());
+    setUniqueSlicedColors([]);
   };
 
+  const onScrollColorBlockContainer: UIEventHandler = (event) => {
+    const eventTarget = event.target;
+    if (eventTarget instanceof HTMLElement) {
+      const { scrollHeight, scrollTop, clientHeight } = eventTarget;
+
+      if (scrollTop + clientHeight >= scrollHeight - 20) {
+        setSliceCursor(sliceCursor + 600);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (workers.length === 0) {
+      const workers: Worker[] = new Array(maxWorkers)
+        .fill(undefined)
+        .map(() => {
+          const instance = new Worker(new URL("./worker.ts", import.meta.url));
+          instance.onmessage = function ({ data }) {
+            assembleUniqueColors(data);
+          };
+          return instance;
+        });
+      setWorkers(workers);
+      return () => {
+        if (workers.length === 0) {
+          workers.forEach((worker) => worker.terminate());
+        }
+      };
+    }
+  }, [workers, assembleUniqueColors]);
+
+  useEffect(() => {
+    setUniqueSlicedColors([...uniqueColors].slice(0, sliceCursor));
+  }, [uniqueColors, sliceCursor]);
   return (
     <article className="Image-Color-Picker__Wrap">
       <section className="Image-Color-Picker__Wrap__Box-Top">
@@ -114,8 +144,11 @@ export default function ImageColorPicker() {
           />
         </div>
       </section>
-      <section className="Image-Color-Picker__Wrap__Box-Bottom">
-        {uniqueColors.map((color) => (
+      <section
+        className="Image-Color-Picker__Wrap__Box-Bottom"
+        onScroll={onScrollColorBlockContainer}
+      >
+        {uniqueSlicedColors.map((color) => (
           <div
             className="block"
             key={color}

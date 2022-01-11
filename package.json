@@ -8,7 +8,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "npx stylelint '**/*.{css,scss}' && eslint -c .eslintrc.js .",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "tsc": "tsc",
     "dev": "webpack-dev-server --config webpack.dev.js --hot",
     "build": "webpack --config webpack.prod.js",
