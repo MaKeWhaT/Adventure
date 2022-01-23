@@ -23,19 +23,16 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      # node_modules 를 캐시합니다.
-      - name: Cache Node Modules.
-        uses: actions/cache@v2
-        id: NODE_MODULES_CACHE
+      # 패키니 매니저를 Yarn 으로 이용합니다.
+      - name: Yarn Project Validate.
+        uses: Borales/actions-yarn@v2.3.0
         with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          cmd: yarn run validate
 
-      # 캐시가 존재하지 않은 경우 레지스트리를 통해 직접 설치합니다.
-      - name: Install Node Modules If Cache Miss.
-        if: steps.NODE_MODULES_CACHE.outputs.cache-hit != 'true'
-        run: npm ci
+      - name: Yarn Project Build.
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: yarn run build
 
-      - run: npm run validate
-      - run: npm run build
-      - run: ls -al ./dist
+      - name: Listing Build Outputs.
+        run: ls -al ./dist

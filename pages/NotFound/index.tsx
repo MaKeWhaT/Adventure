@@ -1,3 +1,3 @@
 export default function Index() {
-  return (<span>Not Found</span>);
+  return <span>Not Found</span>;
 }

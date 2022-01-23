@@ -1,4 +1,4 @@
-import PlayGround from '@/Components/PlayGround';
+import PlayGround from "@/Components/PlayGround";
 
 export default function Index() {
   return <PlayGround />;

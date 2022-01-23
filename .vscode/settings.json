@@ -3,7 +3,12 @@
   "javascript.format.enable": false,
   "eslint.alwaysShowStatus": true,
   "eslint.options": {
-    "extensions": [".html", ".ts", ".js", ".tsx"]
+    "extensions": [
+      ".html",
+      ".ts",
+      ".js",
+      ".tsx"
+    ]
   },
   "eslint.validate": [
     "javascript",
@@ -21,5 +26,12 @@
     "source.fixAll.stylelint": true
   },
   "editor.tabSize": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
