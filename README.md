@@ -5,6 +5,11 @@
   - 리액트 기반의 UI 컴포넌트 개발
   - CI 자동화 연구
 
+## Global Issues
+
+- AutoPrefixer 추가하기
+- StyleLint AutoFix 활성화하기
+
 ## Previews
 
 |              Main               |

@@ -1,0 +1,90 @@
+@use "sass:map";
+
+$switch-shapes: (
+  "rect": 0,
+  "rounded": 2px,
+  "pill": 100px,
+);
+
+// width, height
+$switch-sizes: (
+  "small": (
+    22px 11px,
+  ),
+  "normal": (
+    44px 22px,
+  ),
+  "medium": (
+    88px 44px,
+  ),
+);
+$switch-ball-shapes: (
+  "rect": 0,
+  "rounded": 2px,
+  "pill": 50%,
+);
+
+// top, left, width, height, translateX
+$switch-ball-sizes: (
+  "small": (
+    1px 1px 9px 9px 11px,
+  ),
+  "normal": (
+    2px 2px 18px 18px 22px,
+  ),
+  "medium": (
+    4px 4px 36px 36px 44px,
+  ),
+);
+
+.switch {
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  transition: background-color 0.25s ease-in-out;
+  @each $shape in map-keys($map: $switch-shapes) {
+    &.switch--shape-#{$shape} {
+      border-radius: map.get($map: $switch-shapes, $key: $shape);
+    }
+  }
+  @each $size in map-keys($map: $switch-sizes) {
+    @each $width, $height in map-get($map: $switch-sizes, $key: $size) {
+      &.switch--size-#{$size} {
+        width: $width;
+        height: $height;
+      }
+    }
+  }
+
+  .switch__ball {
+    position: absolute;
+    display: inline-block;
+    transition: transform 0.25s ease-in-out;
+    box-shadow: rgba(0, 35, 11, 20%) 0 2px 4px 0;
+    @each $shape in map-keys($map: $switch-ball-shapes) {
+      &.switch__ball--shape-#{$shape} {
+        border-radius: map.get($map: $switch-ball-shapes, $key: $shape);
+      }
+    }
+    @each $size in map-keys($map: $switch-ball-sizes) {
+      @each $top, $left, $width, $height,
+        $translateX in map-get($map: $switch-ball-sizes, $key: $size)
+      {
+        &.switch__ball--size-#{$size} {
+          top: $top;
+          left: $left;
+          width: $width;
+          height: $height;
+        }
+        &.switch__ball--status-checked-#{$size} {
+          transform: translateX($translateX);
+        }
+        &.switch__ball--status-unchecked-#{$size} {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

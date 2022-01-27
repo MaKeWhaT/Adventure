@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from '@/Components/Layout';
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "@/Components/Layout";
 
 interface RouteConfig {
   name: string;
@@ -11,39 +11,46 @@ interface RouteConfig {
 
 export const routes: RouteConfig[] = [
   {
-    name: 'Home',
-    path: '/Home',
-    Element: lazy(() => import(/* webpackChunkName: "Home" */ 'pages/Home')),
+    name: "Home",
+    path: "/Home",
+    Element: lazy(() => import(/* webpackChunkName: "Home" */ "pages/Home")),
   },
   {
-    name: 'Button',
-    path: '/Button',
+    name: "Button",
+    path: "/Button",
     Element: lazy(
-      () => import(/* webpackChunkName: "Button" */ 'pages/Button'),
+      () => import(/* webpackChunkName: "Button" */ "pages/Button"),
     ),
   },
   {
-    name: 'ImageColorPicker',
-    path: '/ImageColorPicker',
+    name: "ImageColorPicker",
+    path: "/ImageColorPicker",
     Element: lazy(
       () =>
         import(
-          /* webpackChunkName: "ImageColorPicker" */ 'pages/ImageColorPicker'
+          /* webpackChunkName: "ImageColorPicker" */ "pages/ImageColorPicker"
         ),
     ),
   },
   {
-    name: 'PlayGround',
-    path: '/PlayGround',
+    name: "Switch",
+    path: "/Switch",
     Element: lazy(
-      () => import(/* webpackChunkName: "PlayGround" */ 'pages/PlayGround'),
+      () => import(/* webpackChunkName: "Switch" */ "pages/Switch"),
     ),
   },
   {
-    name: 'NotFound',
-    path: '*',
+    name: "PlayGround",
+    path: "/PlayGround",
     Element: lazy(
-      () => import(/* webpackChunkName: "NotFound" */ 'pages/NotFound'),
+      () => import(/* webpackChunkName: "PlayGround" */ "pages/PlayGround"),
+    ),
+  },
+  {
+    name: "NotFound",
+    path: "*",
+    Element: lazy(
+      () => import(/* webpackChunkName: "NotFound" */ "pages/NotFound"),
     ),
   },
 ];
