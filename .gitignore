@@ -1,8 +1,7 @@
-node_modules
 dist
 coverage
 
-# Yarn Zero-Install
+Yarn Zero-Install
 .yarn/*
 !.yarn/cache
 !.yarn/patches
