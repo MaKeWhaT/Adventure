@@ -25,7 +25,8 @@ jobs:
 
       # 패키니 매니저를 Yarn 으로 이용합니다.
       - name: Yarn Install
-        run: npm install yarn -g
+      - run: npm install yarn -g
+      - run: yarn set version berry
 
       - name: Yarn Project Validate
         run: yarn run validate
