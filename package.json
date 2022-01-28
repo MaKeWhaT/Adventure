@@ -30,6 +30,7 @@
     "@jest/globals": "^27.4.6",
     "@swc/core": "^1.2.133",
     "@swc/core-darwin-arm64": "^1.2.135",
+    "@swc/core-linux-x64-gnu": "^1.2.135",
     "@swc/core-linux-x64-musl": "^1.2.133",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",

@@ -3494,9 +3494,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.2.135":
+"@swc/core-linux-x64-gnu@npm:1.2.135, @swc/core-linux-x64-gnu@npm:^1.2.135":
   version: 1.2.135
   resolution: "@swc/core-linux-x64-gnu@npm:1.2.135"
+  checksum: fca1bb93de650b7d78d144647e4e5131c15be1f0cb2e645028a22176eace84d33de5b7c8f09a44b5018078c57eab39a5292140e27154b68b6bd20551719d5ed3
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -4856,6 +4857,7 @@ __metadata:
     "@storybook/react": ^6.4.9
     "@swc/core": ^1.2.133
     "@swc/core-darwin-arm64": ^1.2.135
+    "@swc/core-linux-x64-gnu": ^1.2.135
     "@swc/core-linux-x64-musl": ^1.2.133
     "@testing-library/react": ^12.1.2
     "@testing-library/react-hooks": ^7.0.2
