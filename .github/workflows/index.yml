@@ -24,11 +24,6 @@ jobs:
           node-version-file: ".nvmrc"
 
       # 패키니 매니저를 Yarn 으로 이용합니다.
-      - name: Yarn Project Install.
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: yarn install
-
       - name: Yarn Project Validate.
         uses: Borales/actions-yarn@v2.3.0
         with:
