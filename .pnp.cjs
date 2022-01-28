@@ -49,7 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/addon-links", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.4.15"],
             ["@storybook/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.4.15"],
             ["@swc/core", "npm:1.2.135"],
-            ["@swc/core-darwin-arm64", "npm:1.2.133"],
+            ["@swc/core-darwin-arm64", "npm:1.2.135"],
             ["@swc/core-linux-x64-musl", "npm:1.2.135"],
             ["@testing-library/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:12.1.2"],
             ["@testing-library/react-hooks", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.0.2"],
@@ -6087,13 +6087,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@swc/core-darwin-arm64", [
-        ["npm:1.2.133", {
-          "packageLocation": "./.yarn/unplugged/@swc-core-darwin-arm64-npm-1.2.133-3fa5cafeeb/node_modules/@swc/core-darwin-arm64/",
-          "packageDependencies": [
-            ["@swc/core-darwin-arm64", "npm:1.2.133"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:1.2.135", {
           "packageLocation": "./.yarn/unplugged/@swc-core-darwin-arm64-npm-1.2.135-be2e03212a/node_modules/@swc/core-darwin-arm64/",
           "packageDependencies": [
@@ -7812,7 +7805,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/addon-links", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.4.15"],
             ["@storybook/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.4.15"],
             ["@swc/core", "npm:1.2.135"],
-            ["@swc/core-darwin-arm64", "npm:1.2.133"],
+            ["@swc/core-darwin-arm64", "npm:1.2.135"],
             ["@swc/core-linux-x64-musl", "npm:1.2.135"],
             ["@testing-library/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:12.1.2"],
             ["@testing-library/react-hooks", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.0.2"],

@@ -3451,17 +3451,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.2.133":
-  version: 1.2.133
-  resolution: "@swc/core-darwin-arm64@npm:1.2.133"
-  checksum: 57e66edb3cdf691b1507b8c4461dac7d3f456b8dbb1d46b84798b0dd8c26a2f9e717be12ca9ff27e503d5578c2b0b33740bb2fa8b4b1983cb0b1f4c75cb55d27
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@swc/core-darwin-arm64@npm:1.2.135":
+"@swc/core-darwin-arm64@npm:1.2.135, @swc/core-darwin-arm64@npm:^1.2.135":
   version: 1.2.135
   resolution: "@swc/core-darwin-arm64@npm:1.2.135"
+  checksum: 2b226f402c3a4ff7d2eb33120846d38a3784fbdbd35603b5517b1524736313eeadf175b6dfa602812e8b65825f049822cdadfabdc849fcd632cb83ebcfd1e373
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -4862,7 +4855,7 @@ __metadata:
     "@storybook/addon-links": ^6.4.9
     "@storybook/react": ^6.4.9
     "@swc/core": ^1.2.133
-    "@swc/core-darwin-arm64": "npm:1.2.133"
+    "@swc/core-darwin-arm64": ^1.2.135
     "@swc/core-linux-x64-musl": ^1.2.133
     "@testing-library/react": ^12.1.2
     "@testing-library/react-hooks": ^7.0.2
