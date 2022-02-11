@@ -1,5 +1,5 @@
 onmessage = function (e) {
-  console.log('Message Received From Main Script.');
+  console.log("Message Received From Main Script.");
   const { dataRef, cursorStart, cursorEnd } = e.data;
   const colorSet: Set<string> = new Set();
   for (let i = cursorStart; i <= cursorEnd; i += 4) {

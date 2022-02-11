@@ -4,12 +4,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
-    "prettier",
-  ],
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
   plugins: ["import", "jsx-a11y", "promise", "react", "react-hooks"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -21,6 +16,7 @@ module.exports = {
   },
   rules: {
     "func-names": 0,
+    "no-undef": 0,
     "no-plusplus": 0,
     "no-console": 0,
     "no-use-before-define": 0,
