@@ -56,11 +56,14 @@
       align-items: center;
       justify-content: center;
       height: calc(100vh - 50px);
+      padding: 30px;
 
       .Page-Wrap__Content__Main__Plate {
         padding: 40px;
         background-color: white;
         border-radius: 4px;
+        max-height: 100%;
+        overflow-y: scroll;
       }
     }
   }
