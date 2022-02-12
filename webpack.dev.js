@@ -1,5 +1,5 @@
 const { merge } = require("webpack-merge");
-const common = require("./webpack.swc");
+const common = require("./webpack/webpack.esbuild");
 
 module.exports = merge(common, {
   mode: "development",
