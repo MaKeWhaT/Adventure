@@ -23,12 +23,11 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      # 패키니 매니저를 Yarn 으로 이용합니다.
-      - name: Yarn Install
-        run: npm install yarn -g
+      - name: Corepack Enable
+        run: corepack enable
 
-      - name: Yarn Set Version Berry
-        run: yarn set version berry
+      - name: Yarn Set Version From Sources
+        run: yarn set version from sources
 
       - name: Yarn Project Validate
         run: yarn run validate
