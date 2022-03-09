@@ -40,6 +40,14 @@ export const routes: RouteConfig[] = [
     ),
   },
   {
+    name: "CountDownTimer",
+    path: "/CountDownTimer",
+    Element: lazy(
+      () =>
+        import(/* webpackChunkName: "CountDownTimer" */ "pages/CountDownTimer"),
+    ),
+  },
+  {
     name: "PlayGround",
     path: "/PlayGround",
     Element: lazy(

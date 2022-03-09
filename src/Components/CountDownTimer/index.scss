@@ -1,0 +1,58 @@
+.countdown-timer {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 0.7rem 0.5rem;
+  width: 18.75rem;
+
+  .countdown-timer__title{
+    margin-bottom: 1rem;
+
+    .countdown-timer__title__text{
+      font-size: 1rem;
+      font-weight: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .countdown-timer__display{
+    display: flex;
+    justify-content: space-between;
+
+    .countdown-timer__display__item{
+      border: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      position: relative;
+
+      .countdown-timer__display__item__number{
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        
+      }
+
+      .countdown-timer__display__item__tag{
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 0.20rem;
+      }
+    }
+
+    .countdown-timer__display__item-divider{
+      position: relative;
+      flex: 0 0 auto;
+      width: 0.625rem;
+
+      .countdown-timer__display__item-divider__delimeter{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
