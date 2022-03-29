@@ -5,7 +5,14 @@ module.exports = {
     es2021: true,
   },
   extends: ["eslint:recommended", "plugin:prettier/recommended"],
-  plugins: ["import", "jsx-a11y", "promise", "react", "react-hooks"],
+  plugins: [
+    "prettier",
+    "import",
+    "jsx-a11y",
+    "promise",
+    "react",
+    "react-hooks",
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -15,6 +22,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
+    "prettier/prettier": "error",
     "func-names": 0,
     "no-undef": 0,
     "no-plusplus": 0,
@@ -41,7 +49,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["src/**/*.ts", "src/**/*.tsx", "pages/**/*.ts", "pages/**/*/tsx"],
+      files: ["**/*.ts", "**/*.tsx"],
       excludedFiles: ["*.test.ts", "*.test.tsx"],
     },
   ],
