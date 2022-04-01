@@ -11,7 +11,7 @@ const useImmer = (base: any) => {
   const [state, setState] = useState(base);
   const updateState = useCallback(
     (recipe: (draft: typeof base) => any) => {
-      setState(produce(state, (draft) => recipe(draft)));
+      setState(produce(state, (draft: any) => recipe(draft)));
     },
     [state],
   );

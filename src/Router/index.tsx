@@ -48,6 +48,11 @@ export const routes: RouteConfig[] = [
     ),
   },
   {
+    name: "Text",
+    path: "/Text",
+    Element: lazy(() => import(/* webpackChunkName: "Text" */ "pages/Text")),
+  },
+  {
     name: "PlayGround",
     path: "/PlayGround",
     Element: lazy(

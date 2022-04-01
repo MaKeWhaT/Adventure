@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       # 현재 브랜치의 소스코드를 가져옵니다.
@@ -26,8 +26,8 @@ jobs:
       - name: Corepack Enable
         run: corepack enable
 
-      - name: Yarn Set Version From Sources
-        run: yarn set version from sources
+      - name: Yarn Install
+        run: yarn install --immutable --immutable-cache
 
       - name: Yarn Project Validate
         run: yarn run validate

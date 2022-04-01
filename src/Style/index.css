@@ -1,0 +1,13 @@
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable scss/at-rule-no-unknown */
+@import url("font.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: "Noto Sans Korean", system-ui, sans-serif;
+  }
+}

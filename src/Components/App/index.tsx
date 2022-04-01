@@ -1,11 +1,5 @@
 import { StrictMode } from "react";
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from "recoil";
+import { RecoilRoot } from "recoil";
 import Router from "@/Router";
 import "./index.scss";
 
