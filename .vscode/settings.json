@@ -1,8 +1,14 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
+  "eslint.enable": true,
   "eslint.alwaysShowStatus": true,
   "eslint.options": {
-    "extensions": [".html", ".ts", ".js", ".tsx"]
+    "extensions": [
+      ".html",
+      ".ts",
+      ".js",
+      ".tsx"
+    ]
   },
   "eslint.validate": [
     "javascript",
@@ -24,7 +30,7 @@
     "scss",
     "postcss"
   ],
-  "stylelint.packageManager": "yarn",
+  "stylelint.packageManager": "npm",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
@@ -35,7 +41,13 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "eslint.nodePath": ".yarn/sdks",
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "HTML"
+  },
+  "tailwindCSS.validate": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }

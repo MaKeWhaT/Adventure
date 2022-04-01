@@ -85,6 +85,11 @@ export default function CountDownTimer({
     if (autoStart) {
       startCountDownTime();
     }
+    return () => {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
   }, [
     autoStart,
     repeat,

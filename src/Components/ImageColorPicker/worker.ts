@@ -10,3 +10,5 @@ onmessage = function (e) {
   }
   postMessage(colorSet);
 };
+
+export default {};

@@ -13,7 +13,7 @@ module.exports = {
     "at-rule-no-unknown": [
       true,
       {
-        ignoreAtRules: ["use", "each", "include", "mixin"],
+        ignoreAtRules: ["use", "each", "include", "mixin", "tailwind"],
       },
     ],
     "selector-class-pattern": null,

@@ -96,7 +96,9 @@ export default function ImageColorPicker() {
       const workers: Worker[] = new Array(maxWorkers)
         .fill(undefined)
         .map(() => {
-          const instance = new Worker(new URL("./worker.ts", import.meta.url));
+          const instance = new Worker(new URL("./worker.ts", import.meta.url), {
+            type: "module",
+          });
           instance.onmessage = function ({ data }) {
             assembleUniqueColors(data);
           };
