@@ -8,7 +8,6 @@
       "pages/*": ["pages/*"]
     },
     "useDefineForClassFields": true,
-    "typeRoots" : ["./@types", "./node_modules/@types"],
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": false,
@@ -23,6 +22,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["**/*.ts", "**/*.tsx", "tailwind/typography.js"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["**/node_modules/**"]
 }

@@ -14,12 +14,26 @@
     "validate": "npm run lint && npm run type-check",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
+<<<<<<< HEAD
     "build-storybook": "build-storybook"
+=======
+    "build-storybook": "build-storybook",
+    "lint": "yarn stylelint '**/*.{css,scss}' && yarn eslint -c .eslintrc.js .",
+    "type-check": "yarn tsc",
+    "test:watch": "yarn jest --watch",
+    "test": "yarn jest --passWithNoTests",
+    "dev": "yarn vite",
+    "build": "yarn run validate && yarn vite build",
+    "prepare": "yarn husky install",
+    "validate": "yarn run lint && yarn run type-check",
+    "preview": "yarn vite preview"
+>>>>>>> 9c205ffc325c8df4b1c0ab3a8ce733407d497d77
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+<<<<<<< HEAD
     "@babel/core": "^7.17.8",
     "@jest/globals": "27.5.1",
     "@storybook/addon-actions": "^6.5.0-alpha.54",
@@ -30,6 +44,9 @@
     "@storybook/builder-vite": "^0.1.22",
     "@storybook/react": "^6.5.0-alpha.54",
     "@storybook/testing-library": "^0.0.9",
+=======
+    "@jest/globals": "27.5.1",
+>>>>>>> 9c205ffc325c8df4b1c0ab3a8ce733407d497d77
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
     "@types/babel__core": "^7.1.19",
@@ -41,8 +58,12 @@
     "@typescript-eslint/eslint-plugin": "5.8.0",
     "@typescript-eslint/parser": "5.8.0",
     "@vitejs/plugin-react": "1.2.0",
+<<<<<<< HEAD
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.4",
+=======
+    "autoprefixer": "10.4.2",
+>>>>>>> 9c205ffc325c8df4b1c0ab3a8ce733407d497d77
     "browserslist": "4.19.1",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
@@ -61,8 +82,11 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "27.5.1",
     "lint-staged": "12.1.7",
+<<<<<<< HEAD
     "postcss": "^8.4.12",
     "postcss-import": "^14.1.0",
+=======
+>>>>>>> 9c205ffc325c8df4b1c0ab3a8ce733407d497d77
     "postcss-loader": "6.2.1",
     "postcss-nesting": "^10.1.3",
     "postcss-scss": "4.0.2",
@@ -73,6 +97,7 @@
     "stylelint-config-prettier-scss": "0.0.1",
     "stylelint-config-standard-scss": "3.0.0",
     "stylelint-scss": "4.1.0",
+<<<<<<< HEAD
     "tailwindcss": "^3.0.23",
     "ts-node": "10.4.0",
     "typescript": "4.5.5",
@@ -81,6 +106,22 @@
   },
   "dependencies": {
     "@mdx-js/react": "1.6.22",
+=======
+    "tailwindcss": "3.0.23",
+    "ts-node": "10.4.0",
+    "typescript": "4.5.5",
+    "vite": "2.8.6",
+    "yarn": "1.22.17"
+  },
+  "dependencies": {
+    "@mdx-js/react": "1.6.22",
+    "@storybook/addon-actions": "6.4.9",
+    "@storybook/addon-docs": "6.4.14",
+    "@storybook/addon-essentials": "6.4.9",
+    "@storybook/addon-links": "6.4.9",
+    "@storybook/react": "6.4.9",
+    "@yarnpkg/plugin-typescript": "3.0.0",
+>>>>>>> 9c205ffc325c8df4b1c0ab3a8ce733407d497d77
     "antd": "4.18.4",
     "classnames": "2.3.1",
     "immer": "9.0.7",
@@ -88,7 +129,13 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-router-dom": "6.2.1",
+<<<<<<< HEAD
     "recoil": "0.5.2",
     "tailwind-merge": "^1.2.1"
   }
+=======
+    "recoil": "0.5.2"
+  },
+  "packageManager": "yarn@3.2.0"
+>>>>>>> 9c205ffc325c8df4b1c0ab3a8ce733407d497d77
 }

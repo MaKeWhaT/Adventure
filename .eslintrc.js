@@ -4,11 +4,15 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+<<<<<<< HEAD
   extends: [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
   ],
+=======
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
+>>>>>>> 9c205ffc325c8df4b1c0ab3a8ce733407d497d77
   plugins: [
     "prettier",
     "import",
