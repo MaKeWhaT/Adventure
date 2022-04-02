@@ -17,18 +17,30 @@ export default {
       type: { name: "string", required: false },
       defaultValue: "span",
       description: "생성하는 HTMLElement Tag",
+      options: ["h1", "h2", "h3", "h4", "h5", "h6", "p", "span"],
+      control: {
+        type: "radio",
+      },
     },
     size: {
       name: "size",
       type: { name: "number", required: false },
       defaultValue: 16,
       description: "텍스트 크기",
+      options: [8, 12, 16, 20, 24, 28, 32],
+      control: {
+        type: "radio",
+      },
     },
     weight: {
       name: "weight",
       type: { name: "number", required: false },
       defaultValue: 500,
       description: "텍스트 굵기",
+      options: [100, 300, 350, 400, 500, 700, 900],
+      control: {
+        type: "radio",
+      },
     },
     content: {
       name: "content",

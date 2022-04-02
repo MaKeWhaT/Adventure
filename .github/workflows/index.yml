@@ -23,17 +23,25 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - name: Corepack Enable
-        run: corepack enable
+      # 캐시를 통해 package-lock.json 파일 해시를 확인합니다.
+      - name: Cache Node Modules.
+        id: cache-modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
+      # 캐시가 존재하지 않는 경우 node_modules 재설치합니다.
+      - name: Download Node Modules When Cache Miss.
+        if: steps.cache-modules.outputs.cache-hit != 'true'
+        run: npm ci
 
-      - name: Yarn Install
-        run: yarn install --immutable --immutable-cache
+      # 스타일과 컨벤션 린트, 타입 오류 체크, 빌드
+      - name: Check Lint, Type
+        run: npm run build
 
-      - name: Yarn Project Validate
-        run: yarn run validate
-
-      - name: Yarn Project Build.
-        run: yarn run build
-
+      # 빌드 결과 표시
       - name: Listing Build Outputs.
         run: ls -al ./dist
