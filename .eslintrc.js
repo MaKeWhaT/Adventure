@@ -8,6 +8,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
+    "plugin:tailwindcss/recommended",
   ],
   plugins: [
     "prettier",
@@ -16,6 +17,7 @@ module.exports = {
     "promise",
     "react",
     "react-hooks",
+    "tailwindcss",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -50,6 +52,7 @@ module.exports = {
         additionalHooks: "useRecoilCallback",
       },
     ],
+    "tailwindcss/no-custom-classname": 0,
   },
   overrides: [
     {
