@@ -60,6 +60,11 @@ export const routes: RouteConfig[] = [
     ),
   },
   {
+    name: "Radio",
+    path: "/Radio",
+    Element: lazy(() => import(/* webpackChuknName: "Radio" */ "pages/Radio")),
+  },
+  {
     name: "PlayGround",
     path: "/PlayGround",
     Element: lazy(
