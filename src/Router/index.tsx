@@ -67,6 +67,13 @@ export const routes: RouteConfig[] = [
     ),
   },
   {
+    name: "TextTigger",
+    path: "/TextTigger",
+    Element: lazy(
+      () => import(/* webpackChunkName: "PlayGround" */ "pages/TextTigger"),
+    ),
+  },
+  {
     name: "NotFound",
     path: "*",
     Element: lazy(
