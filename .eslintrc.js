@@ -53,6 +53,7 @@ module.exports = {
       },
     ],
     "tailwindcss/no-custom-classname": 0,
+    "tailwindcss/classnames-order": 0,
   },
   overrides: [
     {

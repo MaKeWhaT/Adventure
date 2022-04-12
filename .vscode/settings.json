@@ -46,7 +46,7 @@
     "javascript": "javascript",
     "html": "HTML"
   },
-  "tailwindCSS.validate": true,
+  "tailwindCSS.validate": false,
   "editor.quickSuggestions": {
     "strings": true
   }
