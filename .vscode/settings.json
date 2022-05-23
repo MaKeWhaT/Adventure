@@ -1,14 +1,9 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "eslint.enable": true,
   "eslint.alwaysShowStatus": true,
   "eslint.options": {
-    "extensions": [
-      ".html",
-      ".ts",
-      ".js",
-      ".tsx"
-    ]
+    "extensions": [".html", ".ts", ".js", ".tsx"]
   },
   "eslint.validate": [
     "javascript",
@@ -25,11 +20,7 @@
   "less.validate": false,
   "scss.validate": false,
   "stylelint.enable": true,
-  "stylelint.validate": [
-    "css",
-    "scss",
-    "postcss"
-  ],
+  "stylelint.validate": ["css", "scss", "postcss"],
   "stylelint.packageManager": "npm",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,

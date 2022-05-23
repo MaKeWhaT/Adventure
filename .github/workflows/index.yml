@@ -32,14 +32,14 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      
+
       # 캐시가 존재하지 않는 경우 node_modules 재설치합니다.
       - name: Download Node Modules When Cache Miss.
         if: steps.cache-modules.outputs.cache-hit != 'true'
         run: npm ci
 
       # 스타일과 컨벤션 린트, 타입 오류 체크, 빌드
-      - name: Check Lint, Type
+      - name: Linting, Type Checking, Project Build
         run: npm run build
 
       # 빌드 결과 표시
