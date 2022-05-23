@@ -26,12 +26,12 @@ jobs:
       # 캐시를 통해 package-lock.json 파일 해시를 확인합니다.
       - name: Cache Node Modules.
         id: cache-modules
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
-          path: ~/.npm
+          path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-node-modules-
 
       # 캐시가 존재하지 않는 경우 node_modules 재설치합니다.
       - name: Download Node Modules When Cache Miss.
