@@ -32,13 +32,13 @@ export const routes: RouteConfig[] = [
         ),
     ),
   },
-  {
-    name: "Switch",
-    path: "/Switch",
-    Element: lazy(
-      () => import(/* webpackChunkName: "Switch" */ "pages/Switch"),
-    ),
-  },
+  // {
+  //   name: "Switch",
+  //   path: "/Switch",
+  //   Element: lazy(
+  //     () => import(/* webpackChunkName: "Switch" */ "pages/Switch"),
+  //   ),
+  // },
   {
     name: "CountDownTimer",
     path: "/CountDownTimer",

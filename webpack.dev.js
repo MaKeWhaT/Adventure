@@ -31,7 +31,6 @@ module.exports = merge(common, {
     hot: true,
     port: 3000,
     host: "0.0.0.0",
-    http2: true,
     https: true,
     static: {
       directory: path.join(__dirname, "public"),
