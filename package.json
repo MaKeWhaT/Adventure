@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "immer": "^9.0.14",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0"
@@ -37,6 +38,7 @@
     "@storybook/manager-webpack5": "^6.5.4",
     "@storybook/react": "^6.5.4",
     "@storybook/testing-library": "^0.0.11",
+    "@swc/core": "^1.2.189",
     "@testing-library/react": "^13.2.0",
     "@testing-library/react-hooks": "^8.0.0",
     "@types/jest": "^27.5.1",
@@ -60,7 +62,6 @@
     "eslint-plugin-tailwindcss": "^3.5.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
-    "immer": "^9.0.14",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
