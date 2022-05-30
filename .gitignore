@@ -25,13 +25,4 @@ node_modules
 dist
 dist-ssr
 *.local
-
-# Yarn Zero-Install
-.yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-!.yarn/unplugged
+storybook-static
