@@ -8,13 +8,13 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    // {
-    //   name: "storybook-addon-turbo-build",
-    //   options: {
-    //     optimizationLevel: 3,
-    //     disableSourceMap: true,
-    //   },
-    // },
+    {
+      name: "storybook-addon-turbo-build",
+      options: {
+        optimizationLevel: 3,
+        disableSourceMap: true,
+      },
+    },
   ],
   framework: "@storybook/react",
   features: {
