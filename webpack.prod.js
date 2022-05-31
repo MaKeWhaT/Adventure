@@ -1,7 +1,7 @@
 const { merge } = require("webpack-merge");
 const common = require("./config/webpack.esbuild");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// This Is Production Config.
+
 module.exports = merge(common, {
   mode: "production",
   devtool: "source-map",
